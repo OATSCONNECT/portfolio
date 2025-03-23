@@ -37,8 +37,6 @@ export default function HomePage() {
                   />
                 </Link>
               </div>
-            </div>
-          ){'}'}
           {/* HERO SECTION */}
           <div
             className="relative bg-cover bg-center bg-no-repeat py-8"
