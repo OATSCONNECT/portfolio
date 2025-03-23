@@ -1,99 +1,119 @@
-"use client"; // Needed if you use React state or event handlers in the App Router
+"use client"; // Required to use React state or event handlers in the App Router
 
 import { useState } from 'react'
-import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function HomePage() {
-  // React state to toggle mobile menu
+  // React state for the mobile menu
   const [mobileMenu, setMobileMenu] = useState(false)
 
   return (
     <>
-      {/* If you want additional meta tags beyond what's in layout.tsx */}
-      <Head>
-        <title>Homepage | Atom Template</title>
-        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-        <link rel="icon" href="/images/favicon.png" />
-        {/* If you want to include external fonts or icons, you can still link them here */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-          rel="stylesheet"
-        />
-        {/* If you had a CSS file like /assets/styles/main.min.css, rename or move it into /public/styles/ or handle in your build */}
-      </Head>
+      {/* If you still want meta tags specifically for this page, you can do so here:
+         *
+         * <Head>
+         *   <title>Homepage | Atom Template</title>
+         *   <meta name="description" content="Lorem ipsum..." />
+         * </Head>
+         *
+         * But most of that is now in layout.tsx metadata or <Head>.
+         */}
 
-      {/* We replace <body> with a <main> wrapper and apply classes conditionally based on mobileMenu */}
       <main className={mobileMenu ? "overflow-hidden max-h-screen relative" : "relative"}>
-        {/* The entire page content goes here */}
         <div id="main" className="relative">
-          {/* NAVBAR SECTION */}
+          {/* NAVBAR */}
           <div className="w-full z-50 top-0 py-3 sm:py-5 absolute">
             <div className="container flex items-center justify-between">
               <div>
-                <a href="/">
-                  {/* Changed src from /assets/img/logo.svg to /images/logo.svg */}
-                  <img src="/images/logo.svg" className="w-24 lg:w-48" alt="logo image" />
-                </a>
+                <Link href="/">
+                  {/* Example dimensions for the logo: width=192, height=48 */}
+                  <Image
+                    src="/images/logo.svg"
+                    alt="logo image"
+                    width={192}
+                    height={48}
+                    priority
+                  />
+                </Link>
               </div>
               <div className="hidden lg:block">
                 <ul className="flex items-center">
-                  {/* Example of anchor-based navigation to sections */}
                   <li className="group pl-6">
-                    <a href="#about" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                    <Link
+                      href="#about"
+                      className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                    >
                       About
-                    </a>
+                    </Link>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                   </li>
                   <li className="group pl-6">
-                    <a href="#services" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                    <Link
+                      href="#services"
+                      className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                    >
                       Services
-                    </a>
+                    </Link>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                   </li>
                   <li className="group pl-6">
-                    <a href="#portfolio" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                    <Link
+                      href="#portfolio"
+                      className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                    >
                       Portfolio
-                    </a>
+                    </Link>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                   </li>
                   <li className="group pl-6">
-                    <a href="#clients" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                    <Link
+                      href="#clients"
+                      className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                    >
                       Clients
-                    </a>
+                    </Link>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                   </li>
                   <li className="group pl-6">
-                    <a href="#work" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                    <Link
+                      href="#work"
+                      className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                    >
                       Work
-                    </a>
+                    </Link>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                   </li>
                   <li className="group pl-6">
-                    <a href="#statistics" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                    <Link
+                      href="#statistics"
+                      className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                    >
                       Statistics
-                    </a>
+                    </Link>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                   </li>
                   <li className="group pl-6">
-                    <a href="#blog" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                    <Link
+                      href="#blog"
+                      className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                    >
                       Blog
-                    </a>
+                    </Link>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                   </li>
                   <li className="group pl-6">
-                    <a href="#contact" className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">
+                    <Link
+                      href="#contact"
+                      className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+                    >
                       Contact
-                    </a>
+                    </Link>
                     <span className="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
                   </li>
                 </ul>
               </div>
               <div className="block lg:hidden">
-                {/* Button to open mobile menu */}
                 <button onClick={() => setMobileMenu(true)}>
                   <i className="bx bx-menu text-4xl text-white"></i>
                 </button>
@@ -105,81 +125,89 @@ export default function HomePage() {
           {mobileMenu && (
             <div className="fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 lg:hidden">
               <div className="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-                <button className="absolute top-0 right-0 mt-4 mr-4" onClick={() => setMobileMenu(false)}>
-                  <img src="/images/icon-close.svg" className="h-10 w-auto" alt="" />
+                <button
+                  className="absolute top-0 right-0 mt-4 mr-4"
+                  onClick={() => setMobileMenu(false)}
+                >
+                  <Image
+                    src="/images/icon-close.svg"
+                    alt="close menu"
+                    width={40}
+                    height={40}
+                  />
                 </button>
                 <ul className="mt-8 flex flex-col">
                   <li className="py-2">
-                    <a
+                    <Link
                       href="#about"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                       onClick={() => setMobileMenu(false)}
                     >
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li className="py-2">
-                    <a
+                    <Link
                       href="#services"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                       onClick={() => setMobileMenu(false)}
                     >
                       Services
-                    </a>
+                    </Link>
                   </li>
                   <li className="py-2">
-                    <a
+                    <Link
                       href="#portfolio"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                       onClick={() => setMobileMenu(false)}
                     >
                       Portfolio
-                    </a>
+                    </Link>
                   </li>
                   <li className="py-2">
-                    <a
+                    <Link
                       href="#clients"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                       onClick={() => setMobileMenu(false)}
                     >
                       Clients
-                    </a>
+                    </Link>
                   </li>
                   <li className="py-2">
-                    <a
+                    <Link
                       href="#work"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                       onClick={() => setMobileMenu(false)}
                     >
                       Work
-                    </a>
+                    </Link>
                   </li>
                   <li className="py-2">
-                    <a
+                    <Link
                       href="#statistics"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                       onClick={() => setMobileMenu(false)}
                     >
                       Statistics
-                    </a>
+                    </Link>
                   </li>
                   <li className="py-2">
-                    <a
+                    <Link
                       href="#blog"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                       onClick={() => setMobileMenu(false)}
                     >
                       Blog
-                    </a>
+                    </Link>
                   </li>
                   <li className="py-2">
-                    <a
+                    <Link
                       href="#contact"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                       onClick={() => setMobileMenu(false)}
                     >
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -189,46 +217,48 @@ export default function HomePage() {
           {/* HERO SECTION */}
           <div
             className="relative bg-cover bg-center bg-no-repeat py-8"
-            style={{ backgroundImage: 'url(/images/bg-hero.jpg)' }}
+            style={{ backgroundImage: "url('/images/bg-hero.jpg')" }}
           >
             <div className="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"></div>
-
             <div className="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
               <div className="flex flex-col items-center justify-center lg:flex-row">
                 <div className="rounded-full border-8 border-primary shadow-xl">
-                  <img
+                  {/* Example dimension guess: width=192, height=192 for a circular image */}
+                  <Image
                     src="/images/blog-author.jpg"
-                    className="h-48 rounded-full sm:h-56"
                     alt="author"
+                    width={192}
+                    height={192}
+                    className="rounded-full"
                   />
                 </div>
                 <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
                   <h1 className="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-                    Hello I'm Christy Smith!
+                    Hello I&apos;m Christy Smith!
                   </h1>
                   <div className="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
                     <div className="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-                      <p className="font-body text-lg uppercase text-white">Let's connect</p>
+                      <p className="font-body text-lg uppercase text-white">Let&apos;s connect</p>
                       <div className="hidden sm:block">
                         <i className="bx bx-chevron-right text-3xl text-yellow"></i>
                       </div>
                     </div>
                     <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                      <a href="/">
+                      <Link href="/">
                         <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
-                      </a>
-                      <a href="/" className="pl-4">
+                      </Link>
+                      <Link href="/" className="pl-4">
                         <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-                      </a>
-                      <a href="/" className="pl-4">
+                      </Link>
+                      <Link href="/" className="pl-4">
                         <i className="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-                      </a>
-                      <a href="/" className="pl-4">
+                      </Link>
+                      <Link href="/" className="pl-4">
                         <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-                      </a>
-                      <a href="/" className="pl-4">
+                      </Link>
+                      <Link href="/" className="pl-4">
                         <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -244,7 +274,7 @@ export default function HomePage() {
                   Who am I?
                 </h2>
                 <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                  I'm Christy Smith, a Web Designer &amp; Photographer
+                  I&apos;m Christy Smith, a Web Designer &amp; Photographer
                 </h4>
                 <p className="pt-6 font-body leading-relaxed text-grey-20">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -261,21 +291,21 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                    <a href="/">
+                    <Link href="/">
                       <i className="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
-                    </a>
-                    <a href="/" className="pl-4">
+                    </Link>
+                    <Link href="/" className="pl-4">
                       <i className="bx bxl-twitter text-2xl text-primary hover:text-yellow"></i>
-                    </a>
-                    <a href="/" className="pl-4">
+                    </Link>
+                    <Link href="/" className="pl-4">
                       <i className="bx bxl-dribbble text-2xl text-primary hover:text-yellow"></i>
-                    </a>
-                    <a href="/" className="pl-4">
+                    </Link>
+                    <Link href="/" className="pl-4">
                       <i className="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
-                    </a>
-                    <a href="/" className="pl-4">
+                    </Link>
+                    <Link href="/" className="pl-4">
                       <i className="bx bxl-instagram text-2xl text-primary hover:text-yellow"></i>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -287,7 +317,7 @@ export default function HomePage() {
                     <h3 className="font-body text-3xl font-bold text-primary">85%</h3>
                   </div>
                   <div className="mt-2 h-3 w-full rounded-full bg-lila">
-                    <div className="h-3 rounded-full bg-primary" style={{ width: '85%' }}></div>
+                    <div className="h-3 rounded-full bg-primary" style={{ width: "85%" }}></div>
                   </div>
                 </div>
                 <div className="pt-6">
@@ -296,7 +326,7 @@ export default function HomePage() {
                     <h3 className="font-body text-3xl font-bold text-primary">70%</h3>
                   </div>
                   <div className="mt-2 h-3 w-full rounded-full bg-lila">
-                    <div className="h-3 rounded-full bg-primary" style={{ width: '70%' }}></div>
+                    <div className="h-3 rounded-full bg-primary" style={{ width: "70%" }}></div>
                   </div>
                 </div>
                 <div className="pt-6">
@@ -305,7 +335,7 @@ export default function HomePage() {
                     <h3 className="font-body text-3xl font-bold text-primary">98%</h3>
                   </div>
                   <div className="mt-2 h-3 w-full rounded-full bg-lila">
-                    <div className="h-3 rounded-full bg-primary" style={{ width: '98%' }}></div>
+                    <div className="h-3 rounded-full bg-primary" style={{ width: "98%" }}></div>
                   </div>
                 </div>
                 <div className="pt-6">
@@ -314,7 +344,7 @@ export default function HomePage() {
                     <h3 className="font-body text-3xl font-bold text-primary">91%</h3>
                   </div>
                   <div className="mt-2 h-3 w-full rounded-full bg-lila">
-                    <div className="h-3 rounded-full bg-primary" style={{ width: '91%' }}></div>
+                    <div className="h-3 rounded-full bg-primary" style={{ width: "91%" }}></div>
                   </div>
                 </div>
               </div>
@@ -324,7 +354,7 @@ export default function HomePage() {
           {/* SERVICES SECTION */}
           <div className="container py-16 md:py-20" id="services">
             <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-              Here's what I'm good at
+              Here&apos;s what I&apos;m good at
             </h2>
             <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
               These are the services I offer
@@ -335,10 +365,20 @@ export default function HomePage() {
               <div className="group rounded px-8 py-12 shadow hover:bg-primary">
                 <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                   <div className="block group-hover:hidden">
-                    <img src="/images/icon-development-black.svg" alt="development icon" />
+                    <Image
+                      src="/images/icon-development-black.svg"
+                      alt="development icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                   <div className="hidden group-hover:block">
-                    <img src="/images/icon-development-white.svg" alt="development icon" />
+                    <Image
+                      src="/images/icon-development-white.svg"
+                      alt="development icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                 </div>
                 <div className="text-center">
@@ -354,10 +394,20 @@ export default function HomePage() {
               <div className="group rounded px-8 py-12 shadow hover:bg-primary">
                 <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                   <div className="block group-hover:hidden">
-                    <img src="/images/icon-content-black.svg" alt="content marketing icon" />
+                    <Image
+                      src="/images/icon-content-black.svg"
+                      alt="content marketing icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                   <div className="hidden group-hover:block">
-                    <img src="/images/icon-content-white.svg" alt="content marketing icon" />
+                    <Image
+                      src="/images/icon-content-white.svg"
+                      alt="content marketing icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                 </div>
                 <div className="text-center">
@@ -373,10 +423,20 @@ export default function HomePage() {
               <div className="group rounded px-8 py-12 shadow hover:bg-primary">
                 <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                   <div className="block group-hover:hidden">
-                    <img src="/images/icon-mobile-black.svg" alt="Mobile Application icon" />
+                    <Image
+                      src="/images/icon-mobile-black.svg"
+                      alt="Mobile dev icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                   <div className="hidden group-hover:block">
-                    <img src="/images/icon-mobile-white.svg" alt="Mobile Application icon" />
+                    <Image
+                      src="/images/icon-mobile-white.svg"
+                      alt="Mobile dev icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                 </div>
                 <div className="text-center">
@@ -392,10 +452,20 @@ export default function HomePage() {
               <div className="group rounded px-8 py-12 shadow hover:bg-primary">
                 <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                   <div className="block group-hover:hidden">
-                    <img src="/images/icon-email-black.svg" alt="Email Marketing icon" />
+                    <Image
+                      src="/images/icon-email-black.svg"
+                      alt="Email Marketing icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                   <div className="hidden group-hover:block">
-                    <img src="/images/icon-email-white.svg" alt="Email Marketing icon" />
+                    <Image
+                      src="/images/icon-email-white.svg"
+                      alt="Email Marketing icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                 </div>
                 <div className="text-center">
@@ -411,10 +481,20 @@ export default function HomePage() {
               <div className="group rounded px-8 py-12 shadow hover:bg-primary">
                 <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                   <div className="block group-hover:hidden">
-                    <img src="/images/icon-design-black.svg" alt="Theme Design icon" />
+                    <Image
+                      src="/images/icon-design-black.svg"
+                      alt="Theme Design icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                   <div className="hidden group-hover:block">
-                    <img src="/images/icon-design-white.svg" alt="Theme Design icon" />
+                    <Image
+                      src="/images/icon-design-white.svg"
+                      alt="Theme Design icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                 </div>
                 <div className="text-center">
@@ -430,10 +510,20 @@ export default function HomePage() {
               <div className="group rounded px-8 py-12 shadow hover:bg-primary">
                 <div className="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
                   <div className="block group-hover:hidden">
-                    <img src="/images/icon-graphics-black.svg" alt="Graphic Design icon" />
+                    <Image
+                      src="/images/icon-graphics-black.svg"
+                      alt="Graphic Design icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                   <div className="hidden group-hover:block">
-                    <img src="/images/icon-graphics-white.svg" alt="Graphic Design icon" />
+                    <Image
+                      src="/images/icon-graphics-white.svg"
+                      alt="Graphic Design icon"
+                      width={96}
+                      height={96}
+                    />
                   </div>
                 </div>
                 <div className="text-center">
@@ -454,21 +544,57 @@ export default function HomePage() {
               Check out my Portfolio
             </h2>
             <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-              Here's what I have done in the past
+              Here&apos;s what I have done in the past
             </h3>
             <div className="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
-              <a href="/" className="mx-auto transform transition-all hover:scale-105 md:mx-0">
-                <img src="/images/portfolio-apple.jpeg" className="w-full shadow" alt="portfolio" />
-              </a>
-              <a href="/" className="mx-auto transform transition-all hover:scale-105 md:mx-0">
-                <img src="/images/portfolio-stripe.jpeg" className="w-full shadow" alt="portfolio" />
-              </a>
-              <a href="/" className="mx-auto transform transition-all hover:scale-105 md:mx-0">
-                <img src="/images/portfolio-fedex.jpeg" className="w-full shadow" alt="portfolio" />
-              </a>
-              <a href="/" className="mx-auto transform transition-all hover:scale-105 md:mx-0">
-                <img src="/images/portfolio-microsoft.jpeg" className="w-full shadow" alt="portfolio" />
-              </a>
+              <Link
+                href="/"
+                className="mx-auto transform transition-all hover:scale-105 md:mx-0"
+              >
+                <Image
+                  src="/images/portfolio-apple.jpeg"
+                  alt="portfolio"
+                  width={800}
+                  height={600}
+                  className="w-full shadow"
+                />
+              </Link>
+              <Link
+                href="/"
+                className="mx-auto transform transition-all hover:scale-105 md:mx-0"
+              >
+                <Image
+                  src="/images/portfolio-stripe.jpeg"
+                  alt="portfolio"
+                  width={800}
+                  height={600}
+                  className="w-full shadow"
+                />
+              </Link>
+              <Link
+                href="/"
+                className="mx-auto transform transition-all hover:scale-105 md:mx-0"
+              >
+                <Image
+                  src="/images/portfolio-fedex.jpeg"
+                  alt="portfolio"
+                  width={800}
+                  height={600}
+                  className="w-full shadow"
+                />
+              </Link>
+              <Link
+                href="/"
+                className="mx-auto transform transition-all hover:scale-105 md:mx-0"
+              >
+                <Image
+                  src="/images/portfolio-microsoft.jpeg"
+                  alt="portfolio"
+                  width={800}
+                  height={600}
+                  className="w-full shadow"
+                />
+              </Link>
             </div>
           </div>
 
@@ -481,37 +607,47 @@ export default function HomePage() {
                 </h2>
                 <div className="flex flex-wrap items-center justify-center pt-4 sm:pt-4">
                   <span className="m-8 block">
-                    <img
+                    <Image
                       src="/images/logo-coca-cola.svg"
                       alt="client logo"
+                      width={150}
+                      height={50}
                       className="mx-auto block h-12 w-auto"
                     />
                   </span>
                   <span className="m-8 block">
-                    <img
+                    <Image
                       src="/images/logo-apple.svg"
                       alt="client logo"
+                      width={150}
+                      height={50}
                       className="mx-auto block h-12 w-auto"
                     />
                   </span>
                   <span className="m-8 block">
-                    <img
+                    <Image
                       src="/images/logo-netflix.svg"
                       alt="client logo"
+                      width={150}
+                      height={50}
                       className="mx-auto block h-12 w-auto"
                     />
                   </span>
                   <span className="m-8 block">
-                    <img
+                    <Image
                       src="/images/logo-amazon.svg"
                       alt="client logo"
+                      width={150}
+                      height={50}
                       className="mx-auto block h-12 w-auto"
                     />
                   </span>
                   <span className="m-8 block">
-                    <img
+                    <Image
                       src="/images/logo-stripe.svg"
                       alt="client logo"
+                      width={150}
+                      height={50}
                       className="mx-auto block h-12 w-auto"
                     />
                   </span>
@@ -526,7 +662,7 @@ export default function HomePage() {
               My work experience
             </h2>
             <h3 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-              Here's what I did before freelancing
+              Here&apos;s what I did before freelancing
             </h3>
 
             <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
@@ -535,7 +671,13 @@ export default function HomePage() {
                 <div className="md:w-2/5">
                   <div className="flex justify-center md:justify-start">
                     <span className="shrink-0">
-                      <img src="/images/logo-spotify.svg" className="h-auto w-32" alt="spotify" />
+                      <Image
+                        src="/images/logo-spotify.svg"
+                        alt="spotify"
+                        width={128}
+                        height={40}
+                        className="h-auto w-32"
+                      />
                     </span>
                     <div className="relative ml-3 hidden w-full md:block">
                       <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
@@ -556,8 +698,9 @@ export default function HomePage() {
                         </span>
                         <div className="pt-2">
                           <span className="block font-body text-black">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis
-                            felis vitae risus pulvinar tincidunt. Nam ac venenatis enim.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac
+                            venenatis enim.
                           </span>
                         </div>
                       </div>
@@ -570,7 +713,13 @@ export default function HomePage() {
                 <div className="md:w-2/5">
                   <div className="flex justify-center md:justify-start">
                     <span className="shrink-0">
-                      <img src="/images/logo-microsoft.svg" className="h-auto w-32" alt="microsoft" />
+                      <Image
+                        src="/images/logo-microsoft.svg"
+                        alt="microsoft"
+                        width={128}
+                        height={40}
+                        className="h-auto w-32"
+                      />
                     </span>
                     <div className="relative ml-3 hidden w-full md:block">
                       <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
@@ -591,8 +740,9 @@ export default function HomePage() {
                         </span>
                         <div className="pt-2">
                           <span className="block font-body text-black">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis
-                            felis vitae risus pulvinar tincidunt. Nam ac venenatis enim.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac
+                            venenatis enim.
                           </span>
                         </div>
                       </div>
@@ -605,7 +755,13 @@ export default function HomePage() {
                 <div className="md:w-2/5">
                   <div className="flex justify-center md:justify-start">
                     <span className="shrink-0">
-                      <img src="/images/logo-fedex.svg" className="h-auto w-32" alt="fedex" />
+                      <Image
+                        src="/images/logo-fedex.svg"
+                        alt="fedex"
+                        width={128}
+                        height={40}
+                        className="h-auto w-32"
+                      />
                     </span>
                     <div className="relative ml-3 hidden w-full md:block">
                       <span className="absolute inset-x-0 top-1/2 h-0.5 -translate-y-1/2 transform bg-grey-70"></span>
@@ -626,8 +782,9 @@ export default function HomePage() {
                         </span>
                         <div className="pt-2">
                           <span className="block font-body text-black">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis
-                            felis vitae risus pulvinar tincidunt. Nam ac venenatis enim.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Vestibulum mattis felis vitae risus pulvinar tincidunt. Nam ac
+                            venenatis enim.
                           </span>
                         </div>
                       </div>
@@ -641,7 +798,7 @@ export default function HomePage() {
           {/* STATISTICS SECTION */}
           <div
             className="bg-cover bg-top bg-no-repeat pb-16 md:py-16 lg:py-24"
-            style={{ backgroundImage: 'url(/images/experience-figure.png)' }}
+            style={{ backgroundImage: "url('/images/experience-figure.png')" }}
             id="statistics"
           >
             <div className="container">
@@ -650,10 +807,12 @@ export default function HomePage() {
                   {/* 1 */}
                   <div className="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
                     <div>
-                      <img
+                      <Image
                         src="/images/icon-project.svg"
-                        className="mx-auto h-12 w-auto md:h-20"
                         alt="icon project"
+                        width={80}
+                        height={80}
+                        className="mx-auto md:h-20"
                       />
                     </div>
                     <div className="pt-5 md:pl-5 md:pt-0">
@@ -666,10 +825,12 @@ export default function HomePage() {
                   {/* 2 */}
                   <div className="flex flex-col items-center justify-center text-center md:flex-row md:text-left">
                     <div>
-                      <img
+                      <Image
                         src="/images/icon-award.svg"
-                        className="mx-auto h-12 w-auto md:h-20"
                         alt="icon award"
+                        width={80}
+                        height={80}
+                        className="mx-auto md:h-20"
                       />
                     </div>
                     <div className="pt-5 md:pl-5 md:pt-0">
@@ -682,10 +843,12 @@ export default function HomePage() {
                   {/* 3 */}
                   <div className="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
                     <div>
-                      <img
+                      <Image
                         src="/images/icon-happy.svg"
-                        className="mx-auto h-12 w-auto md:h-20"
                         alt="icon happy clients"
+                        width={80}
+                        height={80}
+                        className="mx-auto md:h-20"
                       />
                     </div>
                     <div className="pt-5 md:pl-5 md:pt-0">
@@ -698,10 +861,12 @@ export default function HomePage() {
                   {/* 4 */}
                   <div className="mt-6 flex flex-col items-center justify-center text-center md:mt-10 md:flex-row md:text-left lg:mt-0">
                     <div>
-                      <img
+                      <Image
                         src="/images/icon-puzzle.svg"
-                        className="mx-auto h-12 w-auto md:h-20"
                         alt="icon puzzle"
+                        width={80}
+                        height={80}
+                        className="mx-auto md:h-20"
                       />
                     </div>
                     <div className="pt-5 md:pl-5 md:pt-0">
@@ -727,9 +892,9 @@ export default function HomePage() {
               </h4>
               <div className="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
                 {/* Post 1 */}
-                <a href="/post" className="shadow">
+                <Link href="/post" className="shadow">
                   <div
-                    style={{ backgroundImage: 'url(/images/post-01.png)' }}
+                    style={{ backgroundImage: "url('/images/post-01.png')" }}
                     className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
                   >
                     <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
@@ -746,11 +911,11 @@ export default function HomePage() {
                       eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </span>
                   </div>
-                </a>
+                </Link>
                 {/* Post 2 */}
-                <a href="/post" className="shadow">
+                <Link href="/post" className="shadow">
                   <div
-                    style={{ backgroundImage: 'url(/images/post-02.png)' }}
+                    style={{ backgroundImage: "url('/images/post-02.png')" }}
                     className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
                   >
                     <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
@@ -767,11 +932,11 @@ export default function HomePage() {
                       eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </span>
                   </div>
-                </a>
+                </Link>
                 {/* Post 3 */}
-                <a href="/post" className="shadow">
+                <Link href="/post" className="shadow">
                   <div
-                    style={{ backgroundImage: 'url(/images/post-03.png)' }}
+                    style={{ backgroundImage: "url('/images/post-03.png')" }}
                     className="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
                   >
                     <span className="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
@@ -788,7 +953,7 @@ export default function HomePage() {
                       eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </span>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -796,7 +961,7 @@ export default function HomePage() {
           {/* CONTACT SECTION */}
           <div className="container py-16 md:py-20" id="contact">
             <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
-              Here's a contact form
+              Here&apos;s a contact form
             </h2>
             <h4 className="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
               Have Any Questions?
@@ -876,18 +1041,18 @@ export default function HomePage() {
           {/* MAP SECTION */}
           <div
             className="h-72 bg-cover bg-center bg-no-repeat sm:h-64 md:h-72 lg:h-96"
-            style={{ backgroundImage: 'url(/images/map.png)' }}
+            style={{ backgroundImage: "url('/images/map.png')" }}
           ></div>
 
           {/* CTA SECTION */}
           <div
             className="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24"
-            style={{ backgroundImage: 'url(/images/bg-cta.jpg)' }}
+            style={{ backgroundImage: "url('/images/bg-cta.jpg')" }}
           >
             <div className="container relative z-30">
               <h3 className="text-center font-header text-3xl uppercase leading-tight tracking-wide text-white sm:text-4xl lg:text-5xl">
                 Keep <span className="font-bold">up-to-date</span> <br />
-                with what I'm up to
+                with what I&apos;m up to
               </h3>
               <form className="mt-6 flex flex-col justify-center sm:flex-row">
                 <input
@@ -912,21 +1077,21 @@ export default function HomePage() {
                 © Copyright 2022. All rights reserved, ATOM.
               </p>
               <div className="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
-                <a href="/">
+                <Link href="/">
                   <i className="bx bxl-facebook-square text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="/" className="pl-4">
+                </Link>
+                <Link href="/" className="pl-4">
                   <i className="bx bxl-twitter text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="/" className="pl-4">
+                </Link>
+                <Link href="/" className="pl-4">
                   <i className="bx bxl-dribbble text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="/" className="pl-4">
+                </Link>
+                <Link href="/" className="pl-4">
                   <i className="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="/" className="pl-4">
+                </Link>
+                <Link href="/" className="pl-4">
                   <i className="bx bxl-instagram text-2xl text-white hover:text-yellow"></i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
