@@ -29,7 +29,7 @@ export default function HomePage() {
                 <Link href="/">
                   {/* Example dimensions for the logo: width=192, height=48 */}
                   <Image
-                    src="/images/logo.svg"
+                    src="public/images/logo.svg"
                     alt="logo image"
                     width={192}
                     height={48}
