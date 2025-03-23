@@ -50,7 +50,7 @@ export default function HomePage() {
                   </li>
                   <li className="group pl-6">
                     <Link
-                      href="#services"
+                      href="/services"
                       className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                     >
                       Services
