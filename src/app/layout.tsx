@@ -1,12 +1,13 @@
 // app/layout.tsx
-import './globals.css'
-import { ReactNode } from 'react'
-import Head from 'next/head'
+import "./globals.css";
+import { ReactNode } from "react";
+import Head from "next/head";
+import Navbar from "@/components/Navbar"; // Import Navbar
 
 export const metadata = {
-  title: 'Atom Template',
-  description: 'Sample Next.js 13 site with lint fixes',
-}
+  title: "Atom Template",
+  description: "Sample Next.js 13 site with lint fixes",
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -23,7 +24,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </Head>
-      <body>{children}</body>
+      <body>
+        <Navbar /> {/* Navbar will be visible on all pages */}
+        {children}
+      </body>
     </html>
-  )
+  );
 }
