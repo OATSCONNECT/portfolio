@@ -234,7 +234,7 @@ export default function HomePage() {
                 </div>
                 <div className="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
                   <h1 className="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-                    Hello I&apos;m Christy Smith!
+                    Hello I&apos;m Oluwatunbi Abe!
                   </h1>
                   <div className="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
                     <div className="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
@@ -274,12 +274,13 @@ export default function HomePage() {
                   Who am I?
                 </h2>
                 <h4 className="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
-                  I&apos;m Christy Smith, a Web Designer &amp; Photographer
+                  I&apos;m Oluwatunbi Abe, a Brand Designer &amp; Web designer &amp; Graphic Designer
                 </h4>
                 <p className="pt-6 font-body leading-relaxed text-grey-20">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                  veniam...
+                  I'm a passionate brand designer and the creative mind behind
+                  OatsConnect with a keen eye for detail and focus on visual storytelling,
+                  I help businesses bring their brand identity to life through compelling
+                  and strategic design. Let's create something unforgettable together.
                 </p>
                 <div className="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
                   <div className="flex items-center justify-center sm:justify-start">
@@ -313,7 +314,7 @@ export default function HomePage() {
                 {/* Skills bars */}
                 <div>
                   <div className="flex items-end justify-between">
-                    <h4 className="font-body font-semibold uppercase text-black">HTML &amp; CSS</h4>
+                    <h4 className="font-body font-semibold uppercase text-black">Graphic Design &amp; Web design</h4>
                     <h3 className="font-body text-3xl font-bold text-primary">85%</h3>
                   </div>
                   <div className="mt-2 h-3 w-full rounded-full bg-lila">
@@ -322,8 +323,8 @@ export default function HomePage() {
                 </div>
                 <div className="pt-6">
                   <div className="flex items-end justify-between">
-                    <h4 className="font-body font-semibold uppercase text-black">Python</h4>
-                    <h3 className="font-body text-3xl font-bold text-primary">70%</h3>
+                    <h4 className="font-body font-semibold uppercase text-black">Brand design</h4>
+                    <h3 className="font-body text-3xl font-bold text-primary">90%</h3>
                   </div>
                   <div className="mt-2 h-3 w-full rounded-full bg-lila">
                     <div className="h-3 rounded-full bg-primary" style={{ width: "70%" }}></div>
@@ -332,7 +333,7 @@ export default function HomePage() {
                 <div className="pt-6">
                   <div className="flex items-end justify-between">
                     <h4 className="font-body font-semibold uppercase text-black">Javascript</h4>
-                    <h3 className="font-body text-3xl font-bold text-primary">98%</h3>
+                    <h3 className="font-body text-3xl font-bold text-primary">70%</h3>
                   </div>
                   <div className="mt-2 h-3 w-full rounded-full bg-lila">
                     <div className="h-3 rounded-full bg-primary" style={{ width: "98%" }}></div>
@@ -341,7 +342,7 @@ export default function HomePage() {
                 <div className="pt-6">
                   <div className="flex items-end justify-between">
                     <h4 className="font-body font-semibold uppercase text-black">Figma</h4>
-                    <h3 className="font-body text-3xl font-bold text-primary">91%</h3>
+                    <h3 className="font-body text-3xl font-bold text-primary">65%</h3>
                   </div>
                   <div className="mt-2 h-3 w-full rounded-full bg-lila">
                     <div className="h-3 rounded-full bg-primary" style={{ width: "91%" }}></div>
@@ -386,7 +387,7 @@ export default function HomePage() {
                     WEB DEVELOPMENT
                   </h3>
                   <p className="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Creating modern, responsive websites that are visually appealing.
                   </p>
                 </div>
               </div>
@@ -412,10 +413,10 @@ export default function HomePage() {
                 </div>
                 <div className="text-center">
                   <h3 className="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
-                    Technical Writing
+                    Content Creation
                   </h3>
                   <p className="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Developing engaging visuals and copy for social media.
                   </p>
                 </div>
               </div>
