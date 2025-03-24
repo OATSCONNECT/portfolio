@@ -27,7 +27,7 @@ export default function Navbar() {
             <ul className="flex items-center">
               <li className="group pl-6">
                 <Link
-                  href="#about"
+                  href="/about"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                 >
                   About
@@ -45,7 +45,7 @@ export default function Navbar() {
               </li>
               <li className="group pl-6">
                 <Link
-                  href="#portfolio"
+                  href="/portfolio"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                 >
                   Portfolio
@@ -54,7 +54,7 @@ export default function Navbar() {
               </li>
               <li className="group pl-6">
                 <Link
-                  href="#clients"
+                  href="/clients"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                 >
                   Clients
@@ -63,7 +63,7 @@ export default function Navbar() {
               </li>
               <li className="group pl-6">
                 <Link
-                  href="#work"
+                  href="/work"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                 >
                   Work
@@ -72,7 +72,7 @@ export default function Navbar() {
               </li>
               <li className="group pl-6">
                 <Link
-                  href="#statistics"
+                  href="/statistics"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                 >
                   Statistics
@@ -81,7 +81,7 @@ export default function Navbar() {
               </li>
               <li className="group pl-6">
                 <Link
-                  href="#blog"
+                  href="/blog"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                 >
                   Blog
@@ -90,7 +90,7 @@ export default function Navbar() {
               </li>
               <li className="group pl-6">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                 >
                   Contact
@@ -125,7 +125,7 @@ export default function Navbar() {
             <ul className="mt-8 flex flex-col">
               <li className="py-2">
                 <Link
-                  href="#about"
+                  href="/about"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                   onClick={() => setMobileMenu(false)}
                 >
@@ -134,7 +134,7 @@ export default function Navbar() {
               </li>
               <li className="py-2">
                 <Link
-                  href="#services"
+                  href="/services"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                   onClick={() => setMobileMenu(false)}
                 >
@@ -143,7 +143,7 @@ export default function Navbar() {
               </li>
               <li className="py-2">
                 <Link
-                  href="#portfolio"
+                  href="/portfolio"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                   onClick={() => setMobileMenu(false)}
                 >
@@ -152,7 +152,7 @@ export default function Navbar() {
               </li>
               <li className="py-2">
                 <Link
-                  href="#clients"
+                  href="/clients"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                   onClick={() => setMobileMenu(false)}
                 >
@@ -161,7 +161,7 @@ export default function Navbar() {
               </li>
               <li className="py-2">
                 <Link
-                  href="#work"
+                  href="/work"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                   onClick={() => setMobileMenu(false)}
                 >
@@ -170,7 +170,7 @@ export default function Navbar() {
               </li>
               <li className="py-2">
                 <Link
-                  href="#statistics"
+                  href="/statistics"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                   onClick={() => setMobileMenu(false)}
                 >
@@ -179,7 +179,7 @@ export default function Navbar() {
               </li>
               <li className="py-2">
                 <Link
-                  href="#blog"
+                  href="/blog"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                   onClick={() => setMobileMenu(false)}
                 >
@@ -188,7 +188,7 @@ export default function Navbar() {
               </li>
               <li className="py-2">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
                   onClick={() => setMobileMenu(false)}
                 >
