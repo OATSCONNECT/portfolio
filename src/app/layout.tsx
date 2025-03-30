@@ -2,7 +2,7 @@
 import "./globals.css";
 import { ReactNode } from "react";
 import Head from "next/head";
-import Navbar from "@/components/Navbar"; // Import Navbar
+import Navbar from "@/components/navbar"; // Import Navbar
 
 export const metadata = {
   title: "Atom Template",

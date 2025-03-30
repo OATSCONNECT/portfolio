@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "./components/navbar"; // <-- Adjust path as needed
+import Navbar from "../components/navbar"; // <-- Adjusted path
 import Link from "next/link";
 import Image from "next/image";
 
